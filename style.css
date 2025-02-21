@@ -1,0 +1,132 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+header {
+    background-color: #003366;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+header button {
+    background: #fff;
+    color: #003366;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+nav {
+    background: #002244;
+    text-align: center;
+    padding: 10px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    color: #003366;
+}
+.project, article {
+    background: #eef;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 5px solid #003366;
+}
+.contact a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #003366;
+    color: white;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #222;
+    color: white;
+}
+.dark-mode header {
+    background-color: #111;
+}
+.dark-mode nav {
+    background: #000;
+}
+.dark-mode section {
+    background: #333;
+    color: white;
+}
+.dark-mode .project, .dark-mode article {
+    background: #444;
+    border-left: 5px solid #bbb;
+}
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    nav ul li {
+        margin: 5px 0;
+        display: block;
+        text-align: center;
+    }
+    section {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Mobile Devices (max-width: 480px) */
+@media screen and (max-width: 480px) {
+    header {
+        font-size: 14px;
+        padding: 15px;
+    }
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav ul li {
+        display: block;
+        padding: 5px 0;
+    }
+    section {
+        padding: 10px;
+        margin: 10px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    footer {
+        padding: 8px;
+    }
+}
