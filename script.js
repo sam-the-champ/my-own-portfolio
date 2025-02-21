@@ -6,11 +6,25 @@ themeToggle.addEventListener("click", () => {
 
 // Resume Download
 function downloadResume() {
-    const resumeUrl = "https://drive.google.com/uc?export=download&id=1F9WvV3NI8IFkQ7MHoEUKD6Xfz-G_IczI1r6f1NqkLWw"; // Replace with actual resume file
-    const link = document.createElement("a");
-    link.href = resumeUrl;
-    link.download = "Olalekan_Samson_Ogundimu_Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const resumeUrl = "https://drive.google.com/uc?export=download&id=1RPcEeQ7Bzwe7ddAln8lmP0Gd_iuDYTmP";
+    const driveViewUrl = "https://drive.google.com/file/d/1RPcEeQ7Bzwe7ddAln8lmP0Gd_iuDYTmP/view?usp=sharing";
+
+    fetch(resumeUrl)
+        .then(response => {
+            if (!response.ok) throw new Error("Network issue");
+            return response.blob();
+        })
+        .then(blob => {
+            const link = document.createElement("a");
+            link.href = window.URL.createObjectURL(blob);
+            link.download = "Olalekan_Samson_Ogundimu_Resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        })
+        .catch(error => {
+            console.error("Download failed:", error);
+            alert("Download failed. Opening the file in a new tab...");
+            window.open(driveViewUrl, "_blank");
+        });
 }
